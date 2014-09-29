@@ -145,7 +145,7 @@ class CollectionController extends FOSRestController
     /**
      * Updates a value based on its Key
      *
-     * @Rest\Put("/{$key}", name="collection_put")
+     * @Rest\Put("/{key}", name="collection_put")
      *
      * @param  Request $request    The request object
      * @param  string  $collection The collection name

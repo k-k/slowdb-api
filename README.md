@@ -11,7 +11,7 @@ Clone down the repository and run composer install:
 
     $> git clone git@github.com:kmfk/slowdb-api.git
     $> cd slowdb-api
-    $> composer install --no-dev
+    $> php composer.phar install --no-dev
 
 The SlowDB API includes the [SlowDB](https://github.com/kmfk/slowdb) library.
 
@@ -47,7 +47,7 @@ Optionally, you can configure a vhost (apache or nginx) to point to this API.
        collection_search   GET    ANY    ANY  /tables/{collection}/search?q={query}
        collection_count    GET    ANY    ANY  /tables/{collection}/count?q={query}
        collection_set      POST   ANY    ANY  /tables/{collection}
-       collection_put      PUT    ANY    ANY  /tables/{collection}/{$key}
+       collection_put      PUT    ANY    ANY  /tables/{collection}/{key}
        collection_delete   DELETE ANY    ANY  /tables/{collection}/{key}
        database_all        GET    ANY    ANY  /tables
        database_drop       DELETE ANY    ANY  /tables
