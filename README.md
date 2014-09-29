@@ -40,15 +40,15 @@ Optionally, you can configure a vhost (apache or nginx) to point to this API.
 
     $> php app/console router:debug
 
-      Name                Method Scheme Host Path
-      collection_all      GET    ANY    ANY  /tables/{collection}/
-      collection_truncate DELETE ANY    ANY  /tables/{collection}/
-      collection_get      GET    ANY    ANY  /tables/{collection}/{key}
-      collection_search   GET    ANY    ANY  /tables/{collection}/search?q={query}
-      collection_count    GET    ANY    ANY  /tables/{collection}/count?q={query}
-      collection_set      POST   ANY    ANY  /tables/{collection}/
-      collection_put      PUT    ANY    ANY  /tables/{collection}/
-      collection_delete   DELETE ANY    ANY  /tables/{collection}/{key}
-      database_all        GET    ANY    ANY  /tables/
-      database_drop       DELETE ANY    ANY  /tables/
-      database_search     GET    ANY    ANY  /tables/search?q={query}
+       Name                Method Scheme Host Path
+       collection_all      GET    ANY    ANY  /tables/{collection}
+       collection_truncate DELETE ANY    ANY  /tables/{collection}
+       collection_get      GET    ANY    ANY  /tables/{collection}/{key}
+       collection_search   GET    ANY    ANY  /tables/{collection}/search?q={query}
+       collection_count    GET    ANY    ANY  /tables/{collection}/count?q={query}
+       collection_set      POST   ANY    ANY  /tables/{collection}
+       collection_put      PUT    ANY    ANY  /tables/{collection}/{$key}
+       collection_delete   DELETE ANY    ANY  /tables/{collection}/{key}
+       database_all        GET    ANY    ANY  /tables
+       database_drop       DELETE ANY    ANY  /tables
+       database_search     GET    ANY    ANY  /tables/search?q={query}
