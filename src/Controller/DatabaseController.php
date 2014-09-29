@@ -19,7 +19,7 @@ class DatabaseController extends FOSRestController
     /**
      * Returns a list of all available Collections
      *
-     * @Rest\Get("/", name="database_all")
+     * @Rest\Get("", name="database_all")
      *
      * @return JsonResponse
      */
@@ -33,7 +33,7 @@ class DatabaseController extends FOSRestController
     /**
      * Drops all the Collections
      *
-     * @Rest\Delete("/", name="database_drop")
+     * @Rest\Delete("", name="database_drop")
      *
      * @return JsonResponse
      */

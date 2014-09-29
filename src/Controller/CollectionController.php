@@ -21,7 +21,7 @@ class CollectionController extends FOSRestController
     /**
      * Returns a list of all available Collections
      *
-     * @Rest\Get("/", name="collection_all")
+     * @Rest\Get("", name="collection_all")
      *
      * @param  string $collection The collection name
      *
@@ -37,7 +37,7 @@ class CollectionController extends FOSRestController
     /**
      * Truncates a Collection
      *
-     * @Rest\Delete("/", name="collection_truncate")
+     * @Rest\Delete("", name="collection_truncate")
      *
      * @param  string $collection The collection name
      *
@@ -121,7 +121,7 @@ class CollectionController extends FOSRestController
      *
      * If the Key already exists, this will overwrite the existing key
      *
-     * @Rest\Post("/", name="collection_set")
+     * @Rest\Post("", name="collection_set")
      *
      * @param  Request $request    The request object
      * @param  string  $collection The collection name
@@ -131,21 +131,21 @@ class CollectionController extends FOSRestController
     public function setAction(Request $request, $collection)
     {
         $document = json_decode($request->getContent(), true);
+        $key      = key($document);
         $exists   = $this->get('slowdb')->{$collection}->count($key, true);
-        $response = $this->get('slowdb')
-            ->{$collection}->set(key($document), current($document));
+        $response = $this->get('slowdb')->{$collection}->set($key, $document[$key]);
 
         if ($exists) {
-            return new JsonResponse(['created' => $response], 201);
+            return new JsonResponse('', 204);
         }
 
-        return new JsonResponse('', 204);
+        return new JsonResponse(['created' => $response], 201);
     }
 
     /**
      * Updates a value based on its Key
      *
-     * @Rest\Put("/", name="collection_put")
+     * @Rest\Put("/{$key}", name="collection_put")
      *
      * @param  Request $request    The request object
      * @param  string  $collection The collection name
