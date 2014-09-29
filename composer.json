@@ -10,6 +10,7 @@
         "php":                           ">=5.4",
         "friendsofsymfony/rest-bundle":  "~1.1@stable",
         "kmfk/slowdb":                   "~1.0.0@stable",
+        "sensio/distribution-bundle":    "~3.0@stable",
         "sensio/framework-extra-bundle": "~3.0@stable",
         "symfony/monolog-bundle":        "~2.5.0@stable",
         "symfony/symfony":               "~2.5.0@stable"
