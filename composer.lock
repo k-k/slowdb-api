@@ -531,16 +531,16 @@
         },
         {
             "name": "kmfk/slowdb",
-            "version": "1.0.7",
+            "version": "1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kmfk/slowdb.git",
-                "reference": "01a9fb83e60bb2a30b7881112a9015e31a63df32"
+                "reference": "9ecaf29e682d5edb74e2bb39e4b29e4ce4ed817c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kmfk/slowdb/zipball/01a9fb83e60bb2a30b7881112a9015e31a63df32",
-                "reference": "01a9fb83e60bb2a30b7881112a9015e31a63df32",
+                "url": "https://api.github.com/repos/kmfk/slowdb/zipball/9ecaf29e682d5edb74e2bb39e4b29e4ce4ed817c",
+                "reference": "9ecaf29e682d5edb74e2bb39e4b29e4ce4ed817c",
                 "shasum": ""
             },
             "require": {
@@ -562,7 +562,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "A Key/Value Store written in PHP",
-            "time": "2014-09-29 08:14:44"
+            "time": "2014-09-29 08:27:15"
         },
         {
             "name": "monolog/monolog",
