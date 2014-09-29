@@ -17,34 +17,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 class DatabaseController extends FOSRestController
 {
     /**
-     * Returns a list of all available Collections
-     *
-     * @Rest\Get("", name="database_all")
-     *
-     * @return JsonResponse
-     */
-    public function listAction()
-    {
-        $response = $this->get('slowdb')->all();
-
-        return new JsonResponse($response);
-    }
-
-    /**
-     * Drops all the Collections
-     *
-     * @Rest\Delete("", name="database_drop")
-     *
-     * @return JsonResponse
-     */
-    public function dropAllAction()
-    {
-        $response = $this->get('slowdb')->dropAll();
-
-        return new JsonResponse('', 204);
-    }
-
-    /**
      * Searches the Collection for matching keys
      *
      * @Rest\Get("/search", name="database_search")
@@ -71,5 +43,33 @@ class DatabaseController extends FOSRestController
         }
 
         return new JsonResponse($results, 200);
+    }
+
+    /**
+     * Returns a list of all available Collections
+     *
+     * @Rest\Get("", name="database_all")
+     *
+     * @return JsonResponse
+     */
+    public function listAction()
+    {
+        $response = $this->get('slowdb')->all();
+
+        return new JsonResponse($response);
+    }
+
+    /**
+     * Drops all the Collections
+     *
+     * @Rest\Delete("", name="database_drop")
+     *
+     * @return JsonResponse
+     */
+    public function dropAllAction()
+    {
+        $response = $this->get('slowdb')->dropAll();
+
+        return new JsonResponse('', 204);
     }
 }

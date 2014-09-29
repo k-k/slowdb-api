@@ -51,27 +51,6 @@ class CollectionController extends FOSRestController
     }
 
     /**
-     * Returns a value based on its Key
-     *
-     * @Rest\Get("/{key}", name="collection_get")
-     *
-     * @param  string $collection The collection name
-     * @param  string $key        The key to retrieve a value for
-     *
-     * @return JsonResponse
-     */
-    public function getAction($collection, $key)
-    {
-        $response = $this->get('slowdb')->{$collection}->get($key);
-
-        if (!$response) {
-            return new JsonResponse(['error' => 'Not Found.'], 404);
-        }
-
-        return new JsonResponse($response, 200);
-    }
-
-    /**
      * Searches the Collection for matching keys
      *
      * @Rest\Get("/search", name="collection_search")
@@ -114,6 +93,27 @@ class CollectionController extends FOSRestController
         $response = $this->get('slowdb')->{$collection}->count($query, $exact);
 
         return new JsonResponse(['count' => $response], 200);
+    }
+
+    /**
+     * Returns a value based on its Key
+     *
+     * @Rest\Get("/{key}", name="collection_get")
+     *
+     * @param  string $collection The collection name
+     * @param  string $key        The key to retrieve a value for
+     *
+     * @return JsonResponse
+     */
+    public function getAction($collection, $key)
+    {
+        $response = $this->get('slowdb')->{$collection}->get($key);
+
+        if (!$response) {
+            return new JsonResponse(['error' => 'Not Found.'], 404);
+        }
+
+        return new JsonResponse($response, 200);
     }
 
     /**
