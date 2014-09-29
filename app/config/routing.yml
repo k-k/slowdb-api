@@ -1,0 +1,4 @@
+slowdb_api:
+    resource: "@SlowDBApiBundle/Controller"
+    type:     annotation
+    defaults: {_format: json}

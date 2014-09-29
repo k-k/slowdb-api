@@ -1,0 +1,6 @@
+services:
+    slowdb:
+        class: SlowDB\Driver
+        arguments:
+            - localhost
+            - 1337
